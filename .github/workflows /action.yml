@@ -1,4 +1,4 @@
-name:  'Terraform Chirpstack Docker - CI'
+name:  'Terraform Docker - CI'
 
 on:
   push:
