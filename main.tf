@@ -1,6 +1,10 @@
 module "docker-nginx" {
   source = "./module/docker-nginx"
-
+   
+  is_remote = true
+  remote_docker = "192.168.1.100"
+  ssh_user = "devops"
+  ssh_private_key_path = "/home/devops/.ssh/privkey"
   container_name      = "nginx-app"
   container_image     = "nginx:latest"
   containers_number   = 3

@@ -1,4 +1,32 @@
 # Define variables
+
+variable "is_remote" {
+  description = "Flag to indicate whether to use a remote Docker host over SSH."
+  type        = bool
+  default     = false
+}
+
+variable "remote_docker" {
+  description = "IP address or hostname of the remote Docker host."
+  type        = string
+  nullable    = true
+  default     = "127.0.0.1"
+}
+
+variable "ssh_user" {
+  description = "SSH user for connecting to the remote Docker host."
+  type        = string
+  nullable    = true
+  default     = "devops"
+}
+
+variable "ssh_private_key_path" {
+  description = "SSH private key file path"
+  type        = string
+  nullable    = true
+  default     = "/home/user/.ssh/privkey"
+}
+
 variable "container_name" {
   description = "Name of the container."
   type        = string
