@@ -20,3 +20,8 @@ module "docker-nginx" {
   container_privileged = false
   healthcheck_command = ["CMD", "curl", "-f", "localhost"]
 }
+
+# Output values from the module
+output "container_names" {
+  value = [for c in module.docker-nginx.container_names : c.name ]
+}
