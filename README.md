@@ -7,7 +7,10 @@ Ce projet Terraform permet de déployer des conteneurs Docker Nginx avec une con
 Le fichier `main.tf` contient la configuration principale. Vous pouvez personnaliser les paramètres en ajustant les variables dans ce fichier.
 
 ### Variables
-
+- `is_remote`: Indique si l'utilisation d'un hôte Docker distant via SSH est activée (par défaut: false)
+  - `remote_docker`: Adresse IP du serveur Docker
+  - `ssh_user`: Utilisateur pour la connexion SSH
+  - `ssh_private_key_path`: Chemin vers le fichier contenant la clé privée pour l'authentification SSH
 - `container_name`: Nom du conteneur (par défaut: "web-app").
 - `container_image`: Image Docker à utiliser (par défaut: "nginx").
 - `containers_number`: Nombre de conteneurs à créer (par défaut: 2).
